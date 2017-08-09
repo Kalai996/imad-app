@@ -7,7 +7,7 @@ var articleOne = {
     title: "Article one |kalai " ,
     heading: "Article one",
     date:"sep 5,2017",
-    content: '
+    content: `
             
             <p>
                 this is my first artice. this is my first artice. this is my first artice. this is my first artice.
@@ -20,14 +20,14 @@ var articleOne = {
             <p>
                 this is my first artice. this is my first artice. this is my first artice. this is my first artice.
                  this is my first artice. this is my first artice. this is my first artice. this is my first artice.
-            </p>'
+            </p>`
 };
 function createTemplate(data){
 var title = data.title;
 var date = data.date;
 var heading = data.heading;
 var content = data.content;
-var htmlTemplate = '
+var htmlTemplate = `
      <html>
     <head>
         <title>
@@ -66,7 +66,7 @@ var htmlTemplate = '
         </div>
     </body>
 </html>
-';
+`;
  return htmlTemplate;
           }
 app.get('/', function (req, res) {
