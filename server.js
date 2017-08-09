@@ -26,12 +26,13 @@ var articleOne = {
             </p>'
 };
 
-function createTemplate(data){
+function createTemplate(data)
+{
 var title = data.title;
 var date = data.date;
 var heading = data.heading;
 var content = data.content;
-var htmlTemplate= '
+var htmlTemplate = '
 <html>
     <head>
         <title>
@@ -72,8 +73,7 @@ var htmlTemplate= '
 </html>
 ';
  return htmlTemplate;
-          
-}
+          }
 
 app.get('/', function (req, res) {
   res.send(createTemplate(articleOne));
