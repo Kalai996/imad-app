@@ -1,11 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
 app.use(morgan('combined'));
-
-
 var articleOne = {
     title: "Article one |kalai " ,
     heading: "Article one",
@@ -25,15 +22,13 @@ var articleOne = {
                  this is my first artice. this is my first artice. this is my first artice. this is my first artice.
             </p>'
 };
-
-function createTemplate(data)
-{
+function createTemplate(data){
 var title = data.title;
 var date = data.date;
 var heading = data.heading;
 var content = data.content;
 var htmlTemplate = '
-<html>
+     <html>
     <head>
         <title>
             ${title}
@@ -56,14 +51,14 @@ var htmlTemplate = '
     <body>
         <div class="container">
             <div>
-            <a href="/"></a>
+            <a href="/">Home</a>
         </div>
         <hr/>
         <h3>
             ${heading}
         </h3>
         <div>
-            sep 23,1996
+            ${date}
         </div>
         <div>
          ${content}
@@ -74,7 +69,6 @@ var htmlTemplate = '
 ';
  return htmlTemplate;
           }
-
 app.get('/', function (req, res) {
   res.send(createTemplate(articleOne));
 });
